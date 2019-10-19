@@ -22,6 +22,7 @@ def soft_argmax(voxels):
 	x = (((indices/D).floor())/W).floor()%H
 	coords = torch.stack([x,y,z],dim=2)
 	return coords
+
 if __name__ == "__main__":
 	voxel = torch.randn(1,2,2,3,3) # (batch_size, channel, H, W, depth)
 	coords = soft_argmax(voxel)
